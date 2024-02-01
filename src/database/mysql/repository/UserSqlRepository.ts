@@ -9,6 +9,10 @@ export default class UserSqlRepository {
     return User.findAll();
   }
 
+  public async findByUsername(username: string): Promise<User | null> {
+    return User.findOne({ where: { username } });
+  }
+
   public async update(
     id: number,
     data: Partial<User>

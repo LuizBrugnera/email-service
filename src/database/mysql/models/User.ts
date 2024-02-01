@@ -7,7 +7,7 @@ enum Roles {
 }
 
 class User extends Model {
-  declare user: string;
+  declare username: string;
   declare password: string;
   declare role: Roles;
   declare readonly createdAt: Date;
@@ -22,7 +22,7 @@ User.init(
       autoIncrement: true,
       allowNull: false,
     },
-    user: {
+    username: {
       type: sequelize.STRING,
       allowNull: false,
       unique: true,
